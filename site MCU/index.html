@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCU Hub — O Universo Cinematográfico da Marvel</title>
+<meta name="description" content="Explore filmes, séries, personagens e fases do Universo Cinematográfico da Marvel em um só lugar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="logo" aria-label="MCU Hub - Início">
+      <span class="logo-mark">MCU</span><span class="logo-sub">HUB</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+      <a href="#filmes" class="nav-link">Filmes</a>
+      <a href="#series" class="nav-link">Séries</a>
+      <a href="#personagens" class="nav-link">Personagens</a>
+      <a href="#fases" class="nav-link">Fases</a>
+      <a href="#sobre" class="nav-link">Sobre</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ SEARCH BAR ============ -->
+<div class="search-section">
+  <div class="search-bar">
+    <svg class="icon-search" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <input type="search" id="searchInput" placeholder="Procurar filmes, séries e personagens…" aria-label="Procurar no MCU Hub">
+    <button class="icon-btn" id="moreOptionsBtn" aria-label="Mais opções de busca" aria-haspopup="true" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="5" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="19" r="1.6" fill="currentColor"/></svg>
+    </button>
+    <div class="more-options-panel" id="moreOptionsPanel" hidden>
+      <label><input type="checkbox" data-scope="filmes" checked> Filmes</label>
+      <label><input type="checkbox" data-scope="series" checked> Séries</label>
+      <label><input type="checkbox" data-scope="personagens" checked> Personagens</label>
+    </div>
+  </div>
+
+  <!-- category chips -->
+  <div class="chip-row" id="chipRow" role="tablist" aria-label="Filtrar por categoria">
+    <button class="chip is-active" data-filter="todos" role="tab" aria-selected="true">Todos</button>
+    <button class="chip" data-filter="fase1" role="tab" aria-selected="false">Fase 1</button>
+    <button class="chip" data-filter="fase2" role="tab" aria-selected="false">Fase 2</button>
+    <button class="chip" data-filter="fase3" role="tab" aria-selected="false">Fase 3</button>
+    <button class="chip" data-filter="fase4" role="tab" aria-selected="false">Fase 4</button>
+    <button class="chip" data-filter="fase5" role="tab" aria-selected="false">Fase 5</button>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO CAROUSEL ============ -->
+  <section class="hero" aria-roledescription="carrossel" aria-label="Destaques do MCU">
+    <div class="hero-track" id="heroTrack"></div>
+
+    <button class="hero-arrow hero-arrow--prev" id="heroPrev" aria-label="Slide anterior">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="hero-arrow hero-arrow--next" id="heroNext" aria-label="Próximo slide">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Selecionar destaque"></div>
+  </section>
+
+  <!-- ============ EM DESTAQUE (2 cards grandes) ============ -->
+  <section class="section" id="destaque">
+    <div class="section-head">
+      <h2>Em destaque</h2>
+      <p class="section-kicker">Selecionados desta semana</p>
+    </div>
+    <div class="feature-grid" id="featureGrid"></div>
+  </section>
+
+  <!-- ============ FILMES (grid filtrável) ============ -->
+  <section class="section" id="filmes">
+    <div class="section-head">
+      <h2>Filmes</h2>
+      <p class="section-kicker">Todas as fases, um só lugar</p>
+    </div>
+    <div class="card-grid" id="moviesGrid"></div>
+  </section>
+
+  <!-- ============ SÉRIES ============ -->
+  <section class="section" id="series">
+    <div class="section-head">
+      <h2>Séries</h2>
+      <p class="section-kicker">Streaming original</p>
+    </div>
+    <div class="card-grid" id="seriesGrid"></div>
+  </section>
+
+  <!-- ============ PERSONAGENS (2 cards, conforme wireframe) ============ -->
+  <section class="section" id="personagens">
+    <div class="section-head">
+      <h2>Personagens</h2>
+      <p class="section-kicker">Os rostos do universo</p>
+    </div>
+    <div class="feature-grid feature-grid--chars" id="charactersGrid"></div>
+  </section>
+
+  <!-- ============ FASES ============ -->
+  <section class="section" id="fases">
+    <div class="section-head">
+      <h2>Fases do MCU</h2>
+      <p class="section-kicker">A linha do tempo, dividida por saga</p>
+    </div>
+    <div class="phase-list" id="phaseList"></div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="section section--about" id="sobre">
+    <div class="about-box">
+      <h2>Sobre o MCU Hub</h2>
+      <p>O MCU Hub é um projeto independente e não-oficial, criado por fãs para reunir informações sobre o Universo Cinematográfico da Marvel de forma visual e organizada. Dados de exemplo (sinopses, personagens e imagens ilustrativas) foram criados para fins de demonstração desta interface e podem não refletir o catálogo oficial mais recente.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <span class="logo-mark">MCU</span><span class="logo-sub">HUB</span>
+      <p>Um catálogo de fã dedicado ao Universo Cinematográfico da Marvel.</p>
+    </div>
+    <div class="footer-col">
+      <h3>Explorar</h3>
+      <a href="#filmes">Filmes</a>
+      <a href="#series">Séries</a>
+      <a href="#personagens">Personagens</a>
+      <a href="#fases">Fases</a>
+    </div>
+    <div class="footer-col">
+      <h3>Fases</h3>
+      <a href="#" data-jump-filter="fase1">Fase 1 — O Início</a>
+      <a href="#" data-jump-filter="fase3">Fase 3 — O Infinito</a>
+      <a href="#" data-jump-filter="fase4">Fase 4 — Multiverso</a>
+      <a href="#" data-jump-filter="fase5">Fase 5 — Kang</a>
+    </div>
+    <div class="footer-col">
+      <h3>Projeto</h3>
+      <a href="#sobre">Sobre</a>
+      <a href="#top">Voltar ao topo</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 MCU Hub. Projeto de fã, não afiliado à Marvel Studios ou Disney. Todos os nomes e marcas pertencem aos seus respectivos donos.</p>
+  </div>
+</footer>
+
+<!-- ============ MODAL DE DETALHES ============ -->
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Fechar detalhes">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="modal-poster" id="modalPoster" aria-hidden="true"></div>
+    <div class="modal-body">
+      <p class="modal-eyebrow" id="modalEyebrow"></p>
+      <h3 id="modalTitle"></h3>
+      <p class="modal-meta" id="modalMeta"></p>
+      <p class="modal-desc" id="modalDesc"></p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

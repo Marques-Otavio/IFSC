@@ -1,0 +1,38 @@
+COMO ADICIONAR AS CAPAS REAIS DOS FILMES/SÉRIES/PERSONAGENS
+=============================================================
+Salve a imagem de cada capa NESTA pasta (covers/) usando exatamente
+o nome de arquivo indicado abaixo (extensão .jpg, .jpeg, .png ou .webp).
+O site detecta e usa a imagem automaticamente — sem editar código.
+Se um arquivo não existir, o poster estilizado (gradiente) continua
+aparecendo no lugar, então nada quebra.
+
+FILMES
+------
+Homem de Ferro (2008)                                  -> iron-man.jpg
+Os Vingadores (2012)                                    -> the-avengers.jpg
+Capitão América: O Soldado Invernal (2014)               -> winter-soldier.jpg
+Guardiões da Galáxia (2014)                              -> guardians.jpg
+Capitão América: Guerra Civil (2016)                     -> civil-war.jpg
+Vingadores: Guerra Infinita (2018)                       -> infinity-war.jpg
+Vingadores: Ultimato (2019)                              -> endgame.jpg
+Doutor Estranho no Multiverso da Loucura (2022)          -> multiverse-madness.jpg
+Pantera Negra: Wakanda Para Sempre (2022)                -> wakanda-forever.jpg
+Homem-Formiga e a Vespa: Quantumania (2023)              -> quantumania.jpg
+As Marvels (2023)                                        -> marvels.jpg
+
+SÉRIES
+------
+WandaVision (2021)          -> wandavision.jpg
+Loki (2021)                 -> loki.jpg
+Gavião Arqueiro (2021)      -> hawkeye.jpg
+Cavaleiro da Lua (2022)     -> moon-knight.jpg
+
+PERSONAGENS
+-----------
+Tony Stark (Homem de Ferro)        -> tony-stark.jpg
+Steve Rogers (Capitão América)     -> steve-rogers.jpg
+Natasha Romanoff (Viúva Negra)     -> natasha-romanoff.jpg
+Thor Odinson (Thor)                -> thor-odinson.jpg
+
+DICA: se preferir manter o visual estilizado (posters com gradiente),
+não precisa fazer nada — é o padrão do site.
